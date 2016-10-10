@@ -6,15 +6,20 @@ class SearchBar extends Component {
 
     //only ever modify state this way within constructor
     //anywhere else, use this.setState
-    this.state = {term: ''};
+    this.state = { term: '' };
+  }
+
+  onInputChange(term) {
+    this.setState({ term });
+    this.props.onSearchTermChange(term);
   }
 
   render() {
     return (
         <div className="search-bar">
           <input
-            value={this.state.term} //this is now a controlled component
-            onChange={event => this.setState({ term: event.target.value })} />
+            value={ this.state.term } //this is now a controlled component
+            onChange={ event => this.onInputChange(event.target.value) } />
         </div>
       );
   }
