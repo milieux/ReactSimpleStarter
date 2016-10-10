@@ -25,6 +25,7 @@ export default SearchBar;
 //Class-based component vs functional component
 //Class-based is when you need to maintain state
 //Functional component is when only taking some input and returns JSX, can contain class-based component
+//When converting from functional component to class based component it is important to update "props" to "this.props"
 
 //controlled component
 //when the component is rendered the first time, term is set to ''
